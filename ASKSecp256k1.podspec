@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "ASKSecp256k1"
   s.version      = "0.0.1"
-  s.summary      = "An implementation of secp256k1 used Swift."
+  s.summary      = "An library of secp256k1 can use in iOS project."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -90,10 +90,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "ASKSecp256k1/ASKSecp256k1", "Classes/**/*.{h,m,c}"
+  s.source_files  = "ASKSecp256k1/ASKSecp256k1", "ASKSecp256k1/ASKSecp256k1/**/*.{h,m,c}"
   # s.exclude_files = "ASKSecp256k1/Exclude"
 
-  s.public_header_files = "ASKSecp256k1/ASKSecp256k1/CKScep256k1/CKScep256k1.h.h"
+  s.public_header_files = "ASKSecp256k1/ASKSecp256k1/CKScep256k1/CKScep256k1.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
