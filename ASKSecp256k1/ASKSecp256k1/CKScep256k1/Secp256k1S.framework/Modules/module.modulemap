@@ -1,6 +1,0 @@
-framework module Secp256k1S {
-  umbrella header "Secp256k1S.h"
-
-  export *
-  module * { export * }
-}
