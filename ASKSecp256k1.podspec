@@ -116,8 +116,10 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "secp256k1"
+  # s.framework  = "secp256k1"
   # s.frameworks = "SomeFramework", "AnotherFramework"
+
+  s.vendored_frameworks = "ASKSecp256k1/ASKSecp256k1/CKSecp256k1/secp256k1.framework"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
