@@ -6,14 +6,25 @@
 
 #ifndef _SECP256K1_UTIL_H_
 #define _SECP256K1_UTIL_H_
-//
-//#if defined HAVE_CONFIG_H
-//#include "libsecp256k1-config.h"
-//#endif
+
+#include "config.h"
+
+#if defined HAVE_CONFIG_H
+#include "libsecp256k1-config.h"
+#endif
 
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdio.h>
+
+typedef struct {
+    void (*fn)(const char *text, void* data);
+    const void* data;
+} secp256k1_callback;
+
+static SECP256K1_INLINE void secp256k1_callback_call(const secp256k1_callback * const cb, const char * const text) {
+    cb->fn(text, (void*)cb->data);
+}
 
 #ifdef DETERMINISTIC
 #define TEST_FAILURE(msg) do { \
@@ -47,23 +58,23 @@
 } while(0)
 #endif
 
-/* Like assert(), but safe to use on expressions with side effects. */
-#ifndef NDEBUG
-#define DEBUG_CHECK CHECK
-#else
-#define DEBUG_CHECK(cond) do { (void)(cond); } while(0)
-#endif
-
-/* Like DEBUG_CHECK(), but when VERIFY is defined instead of NDEBUG not defined. */
-#ifdef VERIFY
+/* Like assert(), but when VERIFY is defined, and side-effect safe. */
+#if defined(COVERAGE)
+#define VERIFY_CHECK(check)
+#define VERIFY_SETUP(stmt)
+#elif defined(VERIFY)
 #define VERIFY_CHECK CHECK
+#define VERIFY_SETUP(stmt) do { stmt; } while(0)
 #else
 #define VERIFY_CHECK(cond) do { (void)(cond); } while(0)
+#define VERIFY_SETUP(stmt)
 #endif
 
-static SECP256K1_INLINE void *checked_malloc(size_t size) {
+static SECP256K1_INLINE void *checked_malloc(const secp256k1_callback* cb, size_t size) {
     void *ret = malloc(size);
-    CHECK(ret != NULL);
+    if (ret == NULL) {
+        secp256k1_callback_call(cb, "Out of memory");
+    }
     return ret;
 }
 

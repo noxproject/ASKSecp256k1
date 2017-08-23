@@ -14,7 +14,7 @@
 		CC872E611F4688EA003E26D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC872E601F4688EA003E26D8 /* Assets.xcassets */; };
 		CC872E641F4688EA003E26D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC872E621F4688EA003E26D8 /* LaunchScreen.storyboard */; };
 		CC872E6F1F4688EA003E26D8 /* ASKSecp256k1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC872E6E1F4688EA003E26D8 /* ASKSecp256k1Tests.m */; };
-		CC872E7D1F4688F7003E26D8 /* CKScep256k1.m in Sources */ = {isa = PBXBuildFile; fileRef = CC872E7B1F4688F7003E26D8 /* CKScep256k1.m */; };
+		CC872E7D1F4688F7003E26D8 /* CKSecp256k1.m in Sources */ = {isa = PBXBuildFile; fileRef = CC872E7B1F4688F7003E26D8 /* CKSecp256k1.m */; };
 		CC872E831F469B46003E26D8 /* NSData+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = CC872E821F469B46003E26D8 /* NSData+HexString.m */; };
 		CC872EA61F469C49003E26D8 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC872E9B1F469C49003E26D8 /* libgmp.a */; };
 		CC872EA71F469C49003E26D8 /* secp256k1.c in Sources */ = {isa = PBXBuildFile; fileRef = CC872EA41F469C49003E26D8 /* secp256k1.c */; };
@@ -44,8 +44,8 @@
 		CC872E6A1F4688EA003E26D8 /* ASKSecp256k1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASKSecp256k1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC872E6E1F4688EA003E26D8 /* ASKSecp256k1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASKSecp256k1Tests.m; sourceTree = "<group>"; };
 		CC872E701F4688EA003E26D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC872E7A1F4688F7003E26D8 /* CKScep256k1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKScep256k1.h; sourceTree = "<group>"; };
-		CC872E7B1F4688F7003E26D8 /* CKScep256k1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKScep256k1.m; sourceTree = "<group>"; };
+		CC872E7A1F4688F7003E26D8 /* CKSecp256k1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSecp256k1.h; sourceTree = "<group>"; };
+		CC872E7B1F4688F7003E26D8 /* CKSecp256k1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKSecp256k1.m; sourceTree = "<group>"; };
 		CC872E811F469B46003E26D8 /* NSData+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+HexString.h"; sourceTree = "<group>"; };
 		CC872E821F469B46003E26D8 /* NSData+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+HexString.m"; sourceTree = "<group>"; };
 		CC872E851F469C49003E26D8 /* ecdsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecdsa.h; sourceTree = "<group>"; };
@@ -80,6 +80,18 @@
 		CC872EA31F469C49003E26D8 /* scalar_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scalar_impl.h; sourceTree = "<group>"; };
 		CC872EA41F469C49003E26D8 /* secp256k1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = secp256k1.c; sourceTree = "<group>"; };
 		CC872EA51F469C49003E26D8 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		CCD331AE1F4D7D150093621A /* ecmult_const_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecmult_const_impl.h; sourceTree = "<group>"; };
+		CCD331AF1F4D7D150093621A /* ecmult_const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecmult_const.h; sourceTree = "<group>"; };
+		CCD331B01F4D7D150093621A /* ecmult_static_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecmult_static_context.h; sourceTree = "<group>"; };
+		CCD331B11F4D7D150093621A /* field_5x52_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = field_5x52_impl.h; sourceTree = "<group>"; };
+		CCD331B21F4D7D150093621A /* field_5x52_int128_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = field_5x52_int128_impl.h; sourceTree = "<group>"; };
+		CCD331B31F4D7D150093621A /* field_5x52.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = field_5x52.h; sourceTree = "<group>"; };
+		CCD331B41F4D7D150093621A /* libsecp256k1-config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libsecp256k1-config.h"; sourceTree = "<group>"; };
+		CCD331B51F4D7D150093621A /* scalar_4x64_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scalar_4x64_impl.h; sourceTree = "<group>"; };
+		CCD331B61F4D7D150093621A /* scalar_4x64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scalar_4x64.h; sourceTree = "<group>"; };
+		CCD331B71F4D7D150093621A /* scalar_low_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scalar_low_impl.h; sourceTree = "<group>"; };
+		CCD331B81F4D7D150093621A /* scalar_low.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scalar_low.h; sourceTree = "<group>"; };
+		CCD331BA1F4D7FDB0093621A /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				CC872E841F469C49003E26D8 /* secp256k1 */,
-				CC872E7A1F4688F7003E26D8 /* CKScep256k1.h */,
-				CC872E7B1F4688F7003E26D8 /* CKScep256k1.m */,
+				CC872E7A1F4688F7003E26D8 /* CKSecp256k1.h */,
+				CC872E7B1F4688F7003E26D8 /* CKSecp256k1.m */,
 				CC872E811F469B46003E26D8 /* NSData+HexString.h */,
 				CC872E821F469B46003E26D8 /* NSData+HexString.m */,
 			);
@@ -168,6 +180,18 @@
 		CC872E841F469C49003E26D8 /* secp256k1 */ = {
 			isa = PBXGroup;
 			children = (
+				CCD331BA1F4D7FDB0093621A /* config.h */,
+				CCD331AE1F4D7D150093621A /* ecmult_const_impl.h */,
+				CCD331AF1F4D7D150093621A /* ecmult_const.h */,
+				CCD331B01F4D7D150093621A /* ecmult_static_context.h */,
+				CCD331B11F4D7D150093621A /* field_5x52_impl.h */,
+				CCD331B21F4D7D150093621A /* field_5x52_int128_impl.h */,
+				CCD331B31F4D7D150093621A /* field_5x52.h */,
+				CCD331B41F4D7D150093621A /* libsecp256k1-config.h */,
+				CCD331B51F4D7D150093621A /* scalar_4x64_impl.h */,
+				CCD331B61F4D7D150093621A /* scalar_4x64.h */,
+				CCD331B71F4D7D150093621A /* scalar_low_impl.h */,
+				CCD331B81F4D7D150093621A /* scalar_low.h */,
 				CC872E851F469C49003E26D8 /* ecdsa.h */,
 				CC872E861F469C49003E26D8 /* ecdsa_impl.h */,
 				CC872E871F469C49003E26D8 /* eckey.h */,
@@ -319,7 +343,7 @@
 				CC872E5C1F4688EA003E26D8 /* ViewController.m in Sources */,
 				CC872E591F4688EA003E26D8 /* AppDelegate.m in Sources */,
 				CC872EA71F469C49003E26D8 /* secp256k1.c in Sources */,
-				CC872E7D1F4688F7003E26D8 /* CKScep256k1.m in Sources */,
+				CC872E7D1F4688F7003E26D8 /* CKSecp256k1.m in Sources */,
 				CC872E831F469B46003E26D8 /* NSData+HexString.m in Sources */,
 				CC872E561F4688EA003E26D8 /* main.m in Sources */,
 			);
@@ -540,6 +564,7 @@
 				CC872E751F4688EA003E26D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CC872E761F4688EA003E26D8 /* Build configuration list for PBXNativeTarget "ASKSecp256k1Tests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +573,7 @@
 				CC872E781F4688EA003E26D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

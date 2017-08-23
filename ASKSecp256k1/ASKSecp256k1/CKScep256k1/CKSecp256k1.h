@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CKScep256k1 : NSObject
+@interface CKSecp256k1 : NSObject
 + (NSData *)generatePublicKeyWithPrivateKey:(NSData *)privateKeyData compression:(BOOL)isCompression;
++ (NSData *)compactSignData:(NSData *)msgData withPrivateKey:(NSData *)privateKeyData;
++ (NSInteger)verifySignedData:(NSData *)sigData withMessageData:(NSData *)msgData usePublickKey:(NSData *)pubKeyData;
 @end
