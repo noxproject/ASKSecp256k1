@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ASKSecp256k1"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "An library of secp256k1 can use in iOS project."
 
   # This description is used to generate tags and improve search results.
