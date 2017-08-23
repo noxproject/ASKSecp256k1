@@ -7,7 +7,7 @@
 //
 
 #import "CKSecp256k1.h"
-#import "secp256k1.h"
+#import <secp256k1/secp256k1.h>
 #import "NSData+HexString.h"
 
 @implementation CKSecp256k1

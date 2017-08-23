@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ASKSecp256k1"
-  s.version      = "0.0.2"
+  s.version      = "0.0.4"
   s.summary      = "An library of secp256k1 can use in iOS project."
 
   # This description is used to generate tags and improve search results.
@@ -116,7 +116,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "SomeFramework"
+  s.framework  = "secp256k1"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
