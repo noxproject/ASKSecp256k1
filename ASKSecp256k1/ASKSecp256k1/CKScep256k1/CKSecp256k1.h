@@ -8,12 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, CKSecp256k1VerifyError) {
-	<#MyEnumValueA#>,
-	<#MyEnumValueB#>,
-	<#MyEnumValueC#>,
-};
-
 @interface CKSecp256k1 : NSObject
 + (NSData *)generatePublicKeyWithPrivateKey:(NSData *)privateKeyData compression:(BOOL)isCompression;
 + (NSData *)compactSignData:(NSData *)msgData withPrivateKey:(NSData *)privateKeyData;
