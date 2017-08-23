@@ -90,10 +90,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "ASKSecp256k1/ASKSecp256k1/CKScep256k1/**/*.{h,m,c}"
+  s.source_files  = "ASKSecp256k1/ASKSecp256k1/CKSecp256k1/**/*.{h,m,c}"
   # s.exclude_files = "ASKSecp256k1/Exclude"
 
-  s.public_header_files = "ASKSecp256k1/ASKSecp256k1/CKScep256k1/CKScep256k1.h"
+  s.public_header_files = "ASKSecp256k1/ASKSecp256k1/CKSecp256k1/CKSecp256k1.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
